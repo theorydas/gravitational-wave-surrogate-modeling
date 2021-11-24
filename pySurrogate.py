@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class DefaultScaler:
   """ A placeholder scaler that mapped to the identity transformation to be used
   for creating custom sklearn-like scalers.
@@ -16,6 +17,7 @@ class DefaultScaler:
     self.fit_transform = fit_transform
     self.inverse_tranform = inverse_tranform
     self.transform = transform
+
 
 class Initializer:
   """ Takes care of input X transformations in different representations to match
@@ -98,7 +100,8 @@ class Initializer:
       return self.xScaler.inverse_transform(X)
     elif Y is not None:
       return self.yScaler.inverse_transform(Y)
-  
+
+
 class Decoder:
   """ The Decoder class provides uniformity and easy access to reconstructing
   data from a latent space representation and/or applying (input-based)
@@ -163,7 +166,6 @@ class Decoder:
   def __call__(self, coeffs, input):
     return self.decodeCoefficients(coeffs, input)
     
-    
 
 class Regressor:
   """ A wrapper class for whichever regressor is used for the predicting mechanism
@@ -185,6 +187,7 @@ class Regressor:
   
   def __call__(self, x: np.array) -> np.array:
     return self.predict(x)
+
 
 class Surrogate:
   """ A wrapper class for easily producing predictive surrogate models of multi-dimensional
