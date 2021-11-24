@@ -237,4 +237,4 @@ class Surrogate:
     return self.predict(X, input) if not predictLatent else self.regressor(X)
   
   def __call__(self, input: np.array, predictLatent = False) -> np.array:
-    self.getPrediction(input, predictLatent)
+    return self.getPrediction(input, predictLatent)
