@@ -1,6 +1,6 @@
 # pySurrogate
 
-Inspired by the use of machine learning in the field of gravitational waves astronomy as means of accurately and fastly bypassing costly simulators that would have otherwise took ~days-weeks to provide with results, the pySurrogate package aims to streamline the creation of predictive models which learn to map input parameters X to multi-dimensional array outputs Y. The package combines class wrappers with experience on the creation of surrogates to guide the user by effectively splitting the surrogate creation process into three main components.
+Inspired by the use of machine learning in the field of gravitational wave astronomy as means of accurately and fastly bypassing costly simulators that would have otherwise took ~days-weeks to provide with results, the pySurrogate package aims to streamline the creation of predictive models which learn to map input parameters X to multi-dimensional array outputs Y. The package combines class wrappers with experience on the creation of surrogates to guide the user by effectively splitting the surrogate creation process into three main components.
 
 1. Initializing the X input data through unit and physical transformations or reshaping.
 2. Transfering (and decoding) the Y input data to (and from) a reduced latent space representation and applying other physical transformations.
