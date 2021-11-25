@@ -1,6 +1,6 @@
 import numpy as np
 
-# ============ Classes ================
+# ============= Classes ================
 
 class DefaultScaler:
   """ A placeholder scaler that mapped to the identity transformation to be used
