@@ -14,9 +14,9 @@ class DefaultScaler:
   transform : {function}
     A function that transforms the data to the scaler's representation.
   """
-  def __init__(self, fit_transform = lambda x: x, inverse_tranform = lambda y: y, transform = lambda xy: xy):
+  def __init__(self, fit_transform = lambda x: x, inverse_transform = lambda y: y, transform = lambda xy: xy):
     self.fit_transform = fit_transform
-    self.inverse_tranform = inverse_tranform
+    self.inverse_transform = inverse_transform
     self.transform = transform
 
 
