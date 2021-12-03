@@ -9,6 +9,7 @@ Inspired by the use of machine learning in the field of gravitational wave astro
 ## Contents
 
 * `pySurrogate.py` - Currently the only file featured that defines all relevant wrapper classes.
+* `examples/` - A folder containing educational tutorials on the creation of surrogate models through the use of pySurrogate.
 
 ## Documentation
 
