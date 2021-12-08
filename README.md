@@ -18,8 +18,3 @@ A thorough documentation of the entire code can be found [here](https://chalk-im
 ## Requirements
 
 Most of the wrapper classes will require `numpy` arrays as inputs or will generate ones by default. Although <ins>not required</ins>, the package is designed to work best with `sklearn`-like scalers.
-
-## TODOs
-
-* Provide example notebooks and plots.
-* Improve documentation with example usage.
