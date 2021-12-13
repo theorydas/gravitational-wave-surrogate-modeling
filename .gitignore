@@ -1,1 +1,3 @@
 .DS_Store
+pySurrogate.egg-info
+__pycache__
