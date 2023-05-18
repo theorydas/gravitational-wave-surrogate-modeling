@@ -1,20 +1,11 @@
-# pySurrogate
+# GW Surrogate modeling: Bypassing slow gravitational wave simulators using machine learning
 
-Inspired by the use of machine learning techniques in the field of gravitational wave astronomy as means of accurately and fastly bypassing costly simulators that would have otherwise took ~days-weeks to provide with results, the pySurrogate package aims to streamline the creation of predictive models which learn to map input parameters X to multi-dimensional array outputs Y. The package combines class wrappers with experience on the creation of surrogates to guide the user by effectively splitting the surrogate creation process into three main components.
+## What are surrogate models in gravitational wave astronomy?
 
-1. Initializing the X input data through unit and physical transformations or reshaping.
-2. Transfering (and decoding) the Y input data to (and from) a reduced latent space representation and applying other physical transformations.
-3. Creating a regressor model which maps the outputs of the first two steps together.
+For gravitational wave astronomy to be studied experimentally we (often) require prior knowledge of the expected signal. This is formally done by solving the Einstein field tensor equations for a black hole binary system in a process known as 'Numerical Relativity'. Unfortunately, NR is computationally expensive and thus prohibits efficient parameter estimation (which requires hundreds of thousands unique simulation results) in the event of an observation. Whilst physically motivated analytical methods exist, they are only restricted, case-by-case approximations. An alternative implementation seeks to utilize machine learning techniques to bypass simulators in a data-driven way. This is known as a 'Surrogate Model', which after being trained can be evaluated at the speed of a few milliseconds, offering extreme speedups up to millions of times.
 
-## Contents
+## Predicting waveforms
 
-* `pySurrogate.py` - Currently the only file featured that defines all relevant wrapper classes.
-* `examples/` - A folder containing educational tutorials on the creation of surrogate models through the use of pySurrogate.
+This repository contains code in python (`pySurrogate.py` and `main.ipynb`) that aims to provide a simple interface for the creation of surrogate models for gravitational wave simulators. It was used to train a surrogate model for the generation of time-domain waveforms produced by the SEOBNRv4_opt (in substitute of an NR simulator). The black hole mergers are generated as spinning with $s^{1,2}_z \in [-0.8, 0.8]$ and with mass ratios $q \in [5, 100]$, while their waveforms are only considered from the ring-down phase and up to a few dozens of cycles before coalescence.
 
-## Documentation
-
-A thorough documentation of the entire code can be found [here](https://chalk-impulse-d39.notion.site/pySurrogate-b481dfb3e82d4302ad2f8468db1d1886).
-
-## Requirements
-
-Most of the wrapper classes will require `numpy` arrays as inputs or will generate ones by default. Although <ins>not required</ins>, the package is designed to work best with `sklearn`-like scalers.
+ ![Waveform residuals](images/waveform_residuals.png)
